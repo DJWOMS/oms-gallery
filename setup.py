@@ -13,7 +13,7 @@ def read(fname):
 
 
 install_reqs = parse_requirements('requirements.txt')
-reqs = [str(ir) for ir in install_reqs]
+reqs = [str(ir.req) for ir in install_reqs]
 
 
 setup(
@@ -23,7 +23,8 @@ setup(
     author="Omelchenko Michael - DJWOMS",
     author_email="djwoms@gmail.com",
     url="https://github.com/DJWOMS/",
-    packages=find_packages(),
+    long_description=read('README.md'),
+    packages=['oms_gallery'],
     include_package_data=True,
     zip_safe=False,
     classifiers=['Development Status :: 4 - Beta',
