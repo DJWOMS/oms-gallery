@@ -1,13 +1,19 @@
 # /usr/bin/env python
+import os
+
 from setuptools import setup, find_packages
 from pkg_resources import parse_requirements
 
 import oms_gallery
 
 
-def get_requirements(source):
-    with open(source) as f:
-        return sorted({str(req) for req in parse_requirements(f.read())})
+def read(fname):
+    with open(os.path.join(os.path.dirname(__file__), fname)) as f:
+        return f.read()
+
+
+install_reqs = parse_requirements('requirements.txt')
+reqs = [str(ir) for ir in install_reqs]
 
 
 setup(
@@ -20,7 +26,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    classifiers=['Development Status :: 1 - Beta',
+    classifiers=['Development Status :: 4 - Beta',
                  'Environment :: Web Environment',
                  'Framework :: Django',
                  'Intended Audience :: Developers',
@@ -33,5 +39,5 @@ setup(
                  'Programming Language :: Python :: 3.6',
                  'Programming Language :: Python :: 3.7',
                  'Topic :: Utilities'],
-    install_requires=get_requirements('requirements.txt'),
+    install_requires=reqs,
 )

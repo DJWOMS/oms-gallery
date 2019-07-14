@@ -2,6 +2,8 @@
 *.pyc
 oms-gallery.egg-info
 build
+dist
 .idea
 gallery_plugin
 venv
+.pypirc

@@ -5,8 +5,6 @@ recursive-include oms_gallery/*
 global-exclude *.pyc .gitignore
 global-exclude __pycache__
 global-exclude *.py[co]
-global-exclude settings
-global-exclude manage.py
 
 prune .git
 prune __target__
