@@ -17,7 +17,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 
 setup(
-    name="oms-gallery",
+    name="oms_gallery",
     version=oms_gallery.__version__,
     description="Image management for Django.",
     author="Omelchenko Michael - DJWOMS",

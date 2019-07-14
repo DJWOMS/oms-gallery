@@ -1,6 +1,6 @@
 .DS_Store
 *.pyc
-oms-gallery.egg-info
+oms_gallery.egg-info
 build
 dist
 .idea
