@@ -1,0 +1,16 @@
+global-include *.py *.js *.rst *.html *.css *.lyx *.pdf *.png *.gif *.jpg *.txt *.bat *.html *tpl *
+include requirements.txt
+include LICENSE.txt
+recursive-include oms_gallery/*
+global-exclude *.pyc .gitignore
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude settings
+global-exclude manage.py
+
+prune .git
+prune __target__
+prune dist
+prune venv
+prune .idea
+prune oms_gallery.egg-info
