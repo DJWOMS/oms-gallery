@@ -12,7 +12,7 @@ def read(fname):
         return f.read()
 
 
-install_reqs = parse_requirements('req.txt', session='hack')
+install_reqs = parse_requirements('requirements.txt', session='hack')
 reqs = [str(ir.req) for ir in install_reqs]
 
 
