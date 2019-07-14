@@ -1,6 +1,6 @@
 .DS_Store
 *.pyc
-django_photologue.egg-info
+oms-gallery.egg-info
 build
 .idea
 gallery_plugin
