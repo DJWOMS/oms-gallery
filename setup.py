@@ -2,7 +2,7 @@
 import os
 
 from setuptools import setup, find_packages
-from pkg_resources import parse_requirements
+from pip._internal.req import parse_requirements
 
 import oms_gallery
 
@@ -12,7 +12,7 @@ def read(fname):
         return f.read()
 
 
-install_reqs = parse_requirements('requirements.txt')
+install_reqs = parse_requirements('req.txt', session='hack')
 reqs = [str(ir.req) for ir in install_reqs]
 
 
