@@ -2,7 +2,11 @@
 import os
 
 from setuptools import setup, find_packages
-from pip._internal.req import parse_requirements
+
+try:
+    from pip._internal.req import parse_requirements
+except ImportError:
+    from pip.req import parse_requirements
 
 import oms_gallery
 
@@ -22,7 +26,7 @@ setup(
     description="Image management for Django.",
     author="Omelchenko Michael - DJWOMS",
     author_email="djwoms@gmail.com",
-    url="https://github.com/DJWOMS/",
+    url="https://github.com/DJWOMS/oms-gallery",
     long_description=read('README.md'),
     packages=['oms_gallery'],
     include_package_data=True,
