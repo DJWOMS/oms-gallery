@@ -21,9 +21,9 @@ def for_gallery(name=None, pk=None):
 def get_photo(name=None, pk=None):
     """Вывод фото по имени или id"""
     if name is not None:
-        photo = Photo.objects.get(name=name)
+        photo = Photo.objects.filter(name=name).first()
     elif pk is not None:
-        photo = Photo.objects.get(id=pk)
+        photo = Photo.objects.filter(id=pk).first()
     else:
         photo = None
     return photo

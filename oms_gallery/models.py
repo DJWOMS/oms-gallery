@@ -11,7 +11,7 @@ class Photo(models.Model):
     """Класс модели галереи"""
     name = models.CharField(_("Название"), max_length=250)
     image = models.ImageField(_("Изображение"), upload_to='gallery')
-    captions = models.CharField(_("Подпись"), max_length=250, blank=True)
+    captions = models.TextField(_("Подпись"), blank=True)
     create_date = models.DateTimeField(_("Дата добавления"), auto_now_add=True)
     slug = models.SlugField(max_length=255)
 
