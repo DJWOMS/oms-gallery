@@ -1,12 +1,7 @@
 # /usr/bin/env python
 import os
 
-from setuptools import setup, find_packages
-
-try:
-    from pip._internal.req import parse_requirements
-except ImportError:
-    from pip.req import parse_requirements
+from setuptools import setup
 
 import oms_gallery
 
@@ -16,8 +11,8 @@ def read(fname):
         return f.read()
 
 
-install_reqs = parse_requirements('requirements.txt', session='hack')
-reqs = [str(ir.req) for ir in install_reqs]
+with open('requirements.txt') as f:
+    reqs = f.read().splitlines()
 
 
 setup(
@@ -39,10 +34,8 @@ setup(
                  'Operating System :: OS Independent',
                  'Programming Language :: Python',
                  'Programming Language :: Python :: 3',
-                 'Programming Language :: Python :: 3.4',
-                 'Programming Language :: Python :: 3.5',
-                 'Programming Language :: Python :: 3.6',
                  'Programming Language :: Python :: 3.7',
+                 'Programming Language :: Python :: 3.8',
                  'Topic :: Utilities'],
     install_requires=reqs,
 )
